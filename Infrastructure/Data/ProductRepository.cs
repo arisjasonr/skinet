@@ -34,20 +34,11 @@ namespace Infrastructure.Data
         {
             return await _context.ProductBrands.ToListAsync();
         }
-
-        /*public async Task<ProductBrand> GetProductBrandIdAsync(int id)
-        {
-            return await _context.ProductBrands.FindAsync(id);
-        }*/
-
+      
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
             return await _context.ProductTypes.ToListAsync();
         }
-
-        /*public async Task<ProductType> GetProductTypeByIdAsync(int id)
-        {
-            return await _context.ProductTypes.FindAsync(id);
-        }*/
+       
     }
 }
