@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
@@ -24,6 +25,8 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
+            //var products = _context.Products.or
+
             return await _context.Products
                 .Include(p=>p.ProductBrand)
                 .Include(p=>p.ProductType)
