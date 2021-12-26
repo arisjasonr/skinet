@@ -1,0 +1,21 @@
+  <span> {{this.totalCount == 0 ? "No result" : "Showing"}}
+            <strong>
+              {{
+                ((this.shopParams.pageNumber - 1) * this.shopParams.pageSize + 1)
+              }} -
+              {{
+                (this.shopParams.pageNumber * this.shopParams.pageSize) > this.totalCount ? this.totalCount: this.shopParams.pageNumber * this.shopParams.pageSize
+              }}
+            </strong> of
+            <strong>{{this.totalCount}}</strong> results
+          </span>
+
+
+or
+
+<span [innerHTML]="this.totalCount == 0 ? '<strong>No result</strong>' :
+            'Showing <strong>'  + ((this.shopParams.pageNumber - 1) * this.shopParams.pageSize + 1) +
+                 ' - ' + ((this.shopParams.pageNumber * this.shopParams.pageSize) > this.totalCount ? this.totalCount: this.shopParams.pageNumber * this.shopParams.pageSize)
+             + '</strong> of <strong>' +
+            this.totalCount + '</strong> results'">
+          </span>
